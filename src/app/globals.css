@@ -3,27 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* --foreground-rgb: 0, 0, 0; */
+  /* --background-start-rgb: 214, 219, 220; */
+  /* --background-end-rgb: 255, 255, 255; */
+  --bg-color: rgb(247, 248, 252);
+  --gradient-color-top: #F9F8FF;
+  --gradient-color-bottom: #F3F9FF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
 
+.dark {
+  --bg-color: #1e1e2b;
+  --gradient-color-top: #18282A;
+  --gradient-color-bottom: #221A2C;
+
+}
+
+
 body {
+  /* background-color: #402fa5; */
+}
+
+/* body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+} */
+.lowerbg {
+  background: linear-gradient(to bottom, var(--gradient-color-top) 0%, var(--gradient-color-bottom) 100%);
+}
+
+.text-container {
+  /* width: 400px;*/
+  padding: 20px;
+  margin-bottom: 0;
+  background: #FFFFFF;
+  height: 250px;
+  background-image: radial-gradient(20px circle, var(--bg-color) 99%, transparent);
+
+  background-position: 419px -104px;
+  /* margin-bottom: 60px; */
+}
+
+.img-container {
+  /* width: 400px;*/
+  /* padding: 20px; */
+  background: #FFFFFF;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  /* Distributes the space between the items */
+}
+
+.sport>* {
+  flex: 1;
+  /* Each child element takes an equal amount of space */
+  max-width: 30%;
+  /* Adjust the width as per your requirement */
 }
 
 @layer utilities {
